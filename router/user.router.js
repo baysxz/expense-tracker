@@ -1,20 +1,27 @@
 import express from "express";
 
-import { getUsers } from "../controller/user/getUsers";
-import { createUser } from "../controller/user/createUser";
-import { getCategory } from "../controller/category/getCategory";
-import { updateUser } from "../controller/user/updateUser";
-import { createCategory } from "../controller/category/createCategory";
-import { getRecord } from "../controller/record/getRecord";
-import { createRecord } from "../controller/record/createRecord";
-
+import { getUsers } from "../controller/get/getUsers";
+import { createUser } from "../controller/post/createUser";
+import { getCategory } from "../controller/get/getCategory";
+import { updateUser } from "../controller/put/updatedUser";
+import { createCategory } from "../controller/post/createCategory";
+import { getRecord } from "../controller/get/getRecord";
+import { createRecord } from "../controller/post/createRecord";
+import { updatedCategory } from "../controller/put/updatedCategory";
+import { signUp } from "../controller/post/signUp";
+import { getUsersRecord } from "../controller/get/getUsersRecord";
+import { deleteRecord } from "../controller/delete/deleteRecord";
 export const userRouter = express.Router();
 
 userRouter
   .get("/users", getUsers)
-  .post("/addUser", createUser)
   .get("/category", getCategory)
-  .put("/users/:userId", updateUser)
-  .post("/category/addCategory", createCategory)
   .get("/record", getRecord)
-  .post("/record/addRecord", createRecord);
+  .get("/userRecord", getUsersRecord)
+  .post("/users/addUser", createUser)
+  .post("/users/addUser/signUp", signUp)
+  .post("/category/addCategory", createCategory)
+  .post("/record/addRecord", createRecord)
+  .put("/users/:userId", updateUser)
+  .put("/category/:categoryId", updatedCategory)
+  .delete("/delete/:id", deleteRecord);
