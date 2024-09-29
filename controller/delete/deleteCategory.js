@@ -13,3 +13,4 @@ exports.deleteCategory = async (request, response) => {
     response.status(400).json({ message: error });
   }
 };
+// foreign key
