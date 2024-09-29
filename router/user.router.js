@@ -11,6 +11,7 @@ import { updatedCategory } from "../controller/put/updatedCategory";
 import { signUp } from "../controller/post/signUp";
 import { getUsersRecord } from "../controller/get/getUsersRecord";
 import { deleteRecord } from "../controller/delete/deleteRecord";
+import { deleteCategory } from "../controller/delete/deleteCategory";
 export const userRouter = express.Router();
 
 userRouter
@@ -24,4 +25,5 @@ userRouter
   .post("/record/addRecord", createRecord)
   .put("/users/:userId", updateUser)
   .put("/category/:categoryId", updatedCategory)
-  .delete("/delete/:id", deleteRecord);
+  .delete("/deleteRecord/:id", deleteRecord)
+  .delete("/deleteCategory/:id", deleteCategory);
