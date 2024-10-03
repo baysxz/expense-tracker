@@ -1,7 +1,6 @@
 import express from "express";
 
 import { getUsers } from "../controller/get/getUsers";
-import { createUser } from "../controller/post/createUser";
 import { getCategory } from "../controller/get/getCategory";
 import { updateUser } from "../controller/put/updatedUser";
 import { createCategory } from "../controller/post/createCategory";
@@ -19,8 +18,7 @@ userRouter
   .get("/category", getCategory)
   .get("/record", getRecord)
   .get("/userRecord", getUsersRecord)
-  .post("/users/addUser", createUser)
-  .post("/users/addUser/signUp", signUp)
+  .post("/users", signUp)
   .post("/category/addCategory", createCategory)
   .post("/record/addRecord", createRecord)
   .put("/users/:userId", updateUser)
