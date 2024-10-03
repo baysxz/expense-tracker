@@ -8,6 +8,7 @@ import { getRecord } from "../controller/get/getRecord";
 import { createRecord } from "../controller/post/createRecord";
 import { updatedCategory } from "../controller/put/updatedCategory";
 import { signUp } from "../controller/post/signUp";
+import { signIn } from "../controller/post/signIn"
 import { getUsersRecord } from "../controller/get/getUsersRecord";
 import { deleteRecord } from "../controller/delete/deleteRecord";
 import { deleteCategory } from "../controller/delete/deleteCategory";
@@ -19,6 +20,7 @@ userRouter
   .get("/record", getRecord)
   .get("/userRecord", getUsersRecord)
   .post("/users", signUp)
+  .post("/", signIn)
   .post("/category/addCategory", createCategory)
   .post("/record/addRecord", createRecord)
   .put("/users/:userId", updateUser)
