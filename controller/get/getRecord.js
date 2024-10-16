@@ -2,7 +2,9 @@ import { sql } from "../../database/index";
 
 exports.getRecord = async (request, response) => {
   try {
-    const record = await sql`SELECT * FROM record`;
+    const record = await sql`SELECT * FROM record
+        INNER JOIN users ON record.userId = users.userId
+    INNER JOIN category ON record.categoryId = category.categoryId`;
     response.status(200).json({ record: record });
   } catch (error) {
     response.status(400).json({ message: "message" });
