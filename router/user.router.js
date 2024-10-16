@@ -8,7 +8,7 @@ import { getRecord } from "../controller/get/getRecord";
 import { createRecord } from "../controller/post/createRecord";
 import { updatedCategory } from "../controller/put/updatedCategory";
 import { signUp } from "../controller/post/signUp";
-import { signIn } from "../controller/post/signIn"
+import { signIn } from "../controller/post/signIn";
 import { getUsersRecord } from "../controller/get/getUsersRecord";
 import { deleteRecord } from "../controller/delete/deleteRecord";
 import { deleteCategory } from "../controller/delete/deleteCategory";

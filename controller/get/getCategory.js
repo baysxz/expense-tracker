@@ -1,6 +1,6 @@
 import { sql } from "../../database/index";
 
-exports.getCategory = async (_request, response) => {
+exports.getCategory = async (request, response) => {
   try {
     const category = await sql`SELECT * FROM category`;
     response.status(200).json({ category: category });
