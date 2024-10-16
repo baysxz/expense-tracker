@@ -1,6 +1,6 @@
 import { sql } from "../../database/index";
 
-exports.getUsers = async (_request, response) => {
+exports.getUsers = async (request, response) => {
   try {
     const users = await sql`SELECT * FROM users`;
     response.status(200).json({ users: users });
